@@ -18,5 +18,6 @@ typedef struct {
 
 void initChunk(Chunk*);
 void writeChunk(Chunk*, uint8_t);
+void freeChunk(Chunk*);
 
 #endif

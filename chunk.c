@@ -19,3 +19,9 @@ void writeChunk(Chunk* chunk, uint8_t byte) {
     chunk->code = GROW_ARRAY(chunk->code, uint8_t, oldCapacity, chunk->capacity);
   }
 }
+
+
+void freeChunk(Chunk* chunk) {
+  FREE_ARRAY(uint8_t, chunk->code, chunk->capacity);
+  initChunk(chunk);
+}
