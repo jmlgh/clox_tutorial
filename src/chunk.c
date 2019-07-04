@@ -18,6 +18,9 @@ void writeChunk(Chunk* chunk, uint8_t byte) {
     chunk->capacity = GROW_CAPACITY(oldCapacity);
     chunk->code = GROW_ARRAY(chunk->code, uint8_t, oldCapacity, chunk->capacity);
   }
+
+  chunk->code[chunk->count] = byte;
+  chunk->count++;
 }
 
 
